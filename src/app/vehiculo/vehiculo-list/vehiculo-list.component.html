@@ -1,1 +1,46 @@
-<p>vehiculo-list works!</p>
+<div class="container my-4">
+  <div class="hero shadow-sm cf-rounded mb-3">
+    <div class="hero-left">
+      <div class="ribbon">COMERCIALIZACIÓN DE AUTOMOTORES</div>
+      <div class="ribbon-sub">NUEVOS Y USADOS</div>
+    </div>
+    <div class="hero-right" aria-hidden="true"></div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-sm align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th style="width:60px">#</th>
+          <th>Marca</th>
+          <th>Línea</th>
+          <th>Modelo</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let v of vehiculos; let i = index" class="row-divider">
+          <td>{{ i+1 }}</td>
+          <td>{{ v.marca }}</td>
+          <td>{{ v.linea }}</td>
+          <td>{{ v.modelo }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-2" *ngIf="!loading && vehiculos.length">
+    <div *ngFor="let m of marcasOrdenadas()">
+      Total {{ m }}: {{ totalesPorMarca[m] }}
+    </div>
+  </div>
+
+  <div class="text-center my-4" *ngIf="loading">
+    <div class="spinner-border" role="status" aria-label="Cargando"></div>
+  </div>
+  <div class="alert alert-danger" *ngIf="error">{{ error }}</div>
+
+  <footer class="text-center text-muted small mt-4">
+    Contact us: +57 3102105253 - info@tusegundazo.com - @tusegundazo
+  </footer>
+</div>

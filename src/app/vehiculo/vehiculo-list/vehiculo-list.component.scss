@@ -1,0 +1,17 @@
+.cf-rounded{ border-radius: 8px; }
+.hero{
+  background: #f8f9fa;
+  display: grid; grid-template-columns: 1fr 420px; min-height: 180px;
+  overflow: hidden; border: 1px solid #e9ecef;
+}
+.hero-left{ display:flex; flex-direction:column; justify-content:center; padding:1rem; }
+.ribbon{ background:#0d6efd; color:#fff; font-weight:800; display:inline-block; padding:.35rem .6rem; width:max-content; }
+.ribbon-sub{ background:#212529; color:#fff; display:inline-block; padding:.2rem .5rem; margin-top:.35rem; width:max-content; }
+
+.hero-right{
+  background-image: url('https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1000&q=60');
+  background-size: cover; background-position: center right; filter: grayscale(100%);
+}
+
+.table thead th{ vertical-align: middle; }
+.row-divider{ border-bottom: 1px solid #e9ecef; }
