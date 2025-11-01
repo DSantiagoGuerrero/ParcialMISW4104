@@ -1,6 +1,13 @@
-import { ApplicationConfig } from '@angular/core';
-import { provideClientHydration } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
-export const appConfig: ApplicationConfig = {
-  providers: [provideClientHydration()]
-};
+import { AppComponent } from './app.component';
+import { VehiculoModule } from './vehiculo/vehiculo.module';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, HttpClientModule, VehiculoModule],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
