@@ -18,14 +18,12 @@ describe('VehiculoListComponent', () => {
     fixture = TestBed.createComponent(VehiculoListComponent);
     component = fixture.componentInstance;
 
-    // Cargar 3 vehículos “mockeados”
     const mocks: Vehiculo[] = [
       new Vehiculo(1, 'Renault', 'Kangoo', 2017),
       new Vehiculo(2, 'Chevrolet', 'Spark', 2018),
       new Vehiculo(3, 'Chevrolet', 'Sail', 2016),
     ];
 
-    // Inyectar directamente para la prueba
     (component as any).vehiculos = mocks;
     (component as any).totalesPorMarca = { Renault: 1, Chevrolet: 2 };
     component.loading = false;
@@ -41,7 +39,7 @@ describe('VehiculoListComponent', () => {
     const thead = fixture.debugElement.query(By.css('thead'));
     expect(thead).toBeTruthy();
     const ths = thead.queryAll(By.css('th'));
-    expect(ths.length).toBe(4); // #, Marca, Línea, Modelo
+    expect(ths.length).toBe(4);
   });
 
   it('renderiza 3 filas en el tbody', () => {
