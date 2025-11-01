@@ -35,6 +35,9 @@ export class VehiculoListComponent implements OnInit {
   }
 
   marcasOrdenadas(): string[] {
-    return Object.keys(this.totalesPorMarca).sort((a, b) => a.localeCompare(b));
+    const pref = ['Renault','Chevrolet','Nissan'];
+    const rest = Object.keys(this.totalesPorMarca).filter(m => !pref.includes(m)).sort();
+    return [...pref.filter(m => m in this.totalesPorMarca), ...rest];
   }
+
 }

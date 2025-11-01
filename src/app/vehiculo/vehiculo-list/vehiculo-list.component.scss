@@ -1,17 +1,19 @@
-.cf-rounded{ border-radius: 8px; }
 .hero{
-  background: #f8f9fa;
-  display: grid; grid-template-columns: 1fr 420px; min-height: 180px;
-  overflow: hidden; border: 1px solid #e9ecef;
-}
-.hero-left{ display:flex; flex-direction:column; justify-content:center; padding:1rem; }
-.ribbon{ background:#0d6efd; color:#fff; font-weight:800; display:inline-block; padding:.35rem .6rem; width:max-content; }
-.ribbon-sub{ background:#212529; color:#fff; display:inline-block; padding:.2rem .5rem; margin-top:.35rem; width:max-content; }
+  position: relative;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  overflow: hidden;
 
-.hero-right{
-  background-image: url('/assets/mockup-vehiculos.png');
-  background-size: cover; background-position: center right; filter: grayscale(100%);
-}
+  min-height: clamp(160px, 28vw, 280px);
+  background: #fff;
+  display: block;
 
-.table thead th{ vertical-align: middle; }
-.row-divider{ border-bottom: 1px solid #e9ecef; }
+  &::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("/assets/mockup-vehiculos.png") right center / cover no-repeat;
+  }
+
+  & > *{ display: none !important; }
+}
